@@ -96,7 +96,7 @@ export const RegisterForm = () => {
           value={formik.values.username}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          error={formik.touched.username && Boolean(formik.errors.username)}
+          error={formik.touched.username && !!formik.errors.username}
           helperText={formik.touched.username && formik.errors.username}
           margin="normal"
         />
@@ -109,7 +109,7 @@ export const RegisterForm = () => {
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          error={formik.touched.email && Boolean(formik.errors.email)}
+          error={formik.touched.email && !!formik.errors.email}
           helperText={formik.touched.email && formik.errors.email}
           margin="normal"
         />
@@ -123,7 +123,7 @@ export const RegisterForm = () => {
           value={formik.values.password}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          error={formik.touched.password && Boolean(formik.errors.password)}
+          error={formik.touched.password && !!formik.errors.password}
           helperText={formik.touched.password && formik.errors.password}
           margin="normal"
         />
@@ -138,8 +138,7 @@ export const RegisterForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={
-            formik.touched.confirmPassword &&
-            Boolean(formik.errors.confirmPassword)
+            formik.touched.confirmPassword && !!formik.errors.confirmPassword
           }
           helperText={
             formik.touched.confirmPassword && formik.errors.confirmPassword
